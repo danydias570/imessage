@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/images/imessage.svg" type="svg"/>
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="stylesheet" href="./assets/styles/_media-queries.css">
+    <title>Dany Dias</title>
+</head>
+<body>
+    <div class="happybox-messages">
+        <div class="happy-phone">
+            <div class="date">
+                <span>iMessage</span>
+                <span>Aujourd'hui <span id="heure"></span></span>
+            </div>
+            <div class="message left">
+                <div class="message-text">Hello, 👋</div>
+            </div>
+            <div class="message left">
+                <div class="message-text">
+                    <p>
+                        Selon certaines sources, il paraîtrait que je suis développeur web.
+                    </p>
+                </div>
+            </div>
+            <div class="message left">
+                <div class="message-text">
+                    <p>
+                        Je suis actuellement en formation, cependant je réalise des projets en freelance. Vous pouvez me retrouvez ici:
+                        <a class="mail" href="mailto:hello@diasdany.fr">hello@diasdany.fr</a>
+                    </p>
+                </div>
+            </div>
+            <div class="message left">
+                <div class="message-text">
+                    <p>
+                        <a class="mail" href="https://github.com/danydias570" target="_blank">https://github.com/danydias570</a>
+                        <br>
+                        <a class="mail" href="https://dribbble.com/danydias" target="_blank">https://dribbble.com/danydias</a>
+                    </p>
+                </div>
+            </div>
+            <div class="message left">
+                <div class="message-text">
+                    <p>
+                        À bientôt ✌️
+                    </p>
+                </div>
+            </div>
+            <div class="bubble-box">
+                <div class="loader imessages">
+                    <div class="circle-one"></div>
+                    <div class="circle-two"></div>
+                    <div class="circle-three"></div>
+                    <div class="bubble-uno"></div>
+                    <div class="bubble-dos"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let now = new Date();
+        let heure = ('0'+now.getHours()).slice(-2);
+        let minute = ('0'+now.getMinutes()).slice(-2);
+        document.querySelector('#heure').innerHTML = heure + ":" + minute;
+    </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+@font-face {
+    font-family: sf-pro-light;
+    src: url("../fonts/SFPRODISPLAYLIGHT.ttf");
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: sf-pro-light;
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+}
+.happybox-messages {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.happy-phone {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    border-top: none;
+    overflow: hidden;
+}
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    width: 100%;
+    color:#797979;
+    padding: 15px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translate(0);
+    animation: apparition .7s 4s ease forwards;
+}
+.mail {
+    color: #0171e2;
+    text-decoration: none;}
+.mail:hover {
+    text-decoration: underline;
+    text-underline-offset: 1px;
+}
+
+
+
+/**
+** TINY BALLOONS
+**/
+.message {
+    margin: 1px 0;
+    opacity: 0;
+    transform: translate(-600px, 500px);
+    overflow: hidden;
+}
+.message-text {
+    padding: 10px 20px;
+    float: right;
+    clear: both;
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 1px;
+}
+.message.left .message-text {
+    margin-right: 70px;
+    margin-left: 20px;
+    background-color: #333333;
+    float: left;
+}
+.message-text:last-child:before,
+.message-text:last-child:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 35px;
+    height: 25px;
+    z-index: -1;
+}
+.message.left .message-text:before,
+.message.left .message-text:after {
+    border-radius: 0 0 50% 0;
+}
+.message.left .message-text:before {
+    height: 20px;
+    left: -23px;
+    background-color: #333333;
+}
+.message.left .message-text:after {
+    left: -35px;
+    bottom: -3px;
+    background-color: black;
+}
+.message:nth-child(2) .message-text:before,
+.message:nth-child(2) .message-text:after {
+    animation: disparition .2s 5.5s ease forwards;
+}
+.message:nth-child(3) .message-text:before,
+.message:nth-child(3) .message-text:after {
+    animation: disparition .2s 8.5s ease forwards;
+}
+.message:nth-child(4) .message-text:before,
+.message:nth-child(4) .message-text:after {
+    animation: disparition .2s 11.5s ease forwards;
+}
+.message:nth-child(5) .message-text:before,
+.message:nth-child(5) .message-text:after {
+    animation: disparition .2s 13.5s ease forwards;
+}
+@keyframes disparition {
+    100% {
+        background-color: black;
+    }
+}
+
+
+
+/**
+** BUBBLE BOX
+**/
+.bubble-box {
+    position: fixed;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    opacity: 0;
+    animation: apparitionBubble 13.5s 1s ease;
+}
+.imessages {
+	width: 80px;
+	height: 45px;
+	position: relative;
+    margin: 30px;
+	border-radius: 25px;
+	background: #333333;
+	animation: imessages 1.25s linear 0s infinite;
+}
+@keyframes imessages {
+  0% {
+      transform: scale(1);
+    }
+	50% {
+        transform: scale(1.05);
+    }
+	100% {
+        transform: scale(1);
+    }
+}
+.circle-one {
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	top: 49%;
+	left: 15px;
+	margin-top: -6px;
+	border-radius: 25px;
+	animation: circle-one 1.25s linear 0s infinite;
+}
+@keyframes circle-one {
+    0% {
+        background: #838383; /* dark */
+    }
+	33%	{
+        background: #c2c2c2;
+    }
+	66%	{
+        background: #c2c2c2;
+    }
+	100% {
+        background: #c2c2c2;
+    }
+}
+.circle-two {
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	top: 49%;
+	left: 33px;
+	margin-top: -6px;
+	border-radius: 25px;
+	animation: circle-two 1.25s linear 0s infinite;
+}
+@keyframes circle-two {
+    0% {
+        background: #c2c2c2;
+    }
+	33%	{
+        background: #c2c2c2;
+    }
+	66%	{
+        background: #838383; /* dark */
+    }
+	100% {
+        background: #c2c2c2;
+    }
+}
+.circle-three {
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	top: 49%;
+	left: 52px;
+	margin-top: -6px;
+	border-radius: 25px;
+	animation: circle-three 1.25s linear 0s infinite;
+}
+@keyframes circle-three {
+    0% {
+        background: #c2c2c2;
+    }
+	33% {
+        background: #c2c2c2;
+    }
+	66% {
+        background: #c2c2c2;
+    }
+	100% {
+        background: #838383; /* dark */
+    }
+}
+.bubble-uno {
+	position: absolute;
+	top: 58%;
+	left: -8%;
+	background: #333333;
+	border-radius: 25px;
+	width: 17px;
+	height: 17px;
+	z-index: -1;
+	animation: bubble-uno 1.25s linear 0s infinite;
+}
+@keyframes bubble-uno {
+   0% {
+       transform: scale(1);
+    }
+	50% {
+        transform: scale(1.2);
+    }
+	100% {
+        transform: scale(1);
+    }
+}
+.bubble-dos {
+	position: absolute;
+	top: 90%;
+	left: -15%;
+	background: #333333;
+	border-radius: 25px;
+	width: 6px;
+	height: 6px;
+	z-index: -2;
+}
+@keyframes bubble-dos {
+   0% {
+       transform: scale(1);
+    }
+	50% {
+        transform: scale(1.2);
+    }
+	100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/**
+** JUICY ANIMATIONS
+**/
+@keyframes apparition {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+.message:nth-child(2) {
+    animation: apparition .7s 3s ease forwards;
+}
+.message:nth-child(3) {
+    animation: apparition .7s 5s ease forwards;
+}
+.message:nth-child(4) {
+    animation: apparition .7s 8s ease forwards;
+}
+.message:nth-child(5) {
+    animation: apparition .7s 11s ease forwards;
+}
+.message:nth-child(6) {
+    padding-bottom: 50px;
+    animation: apparition .7s 13s ease forwards;
+}
+@keyframes apparitionBubble {
+    0% {
+        opacity: 0;
+        transform: none;
+    }
+    7% {
+        opacity: 1;
+        transform: none;
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
